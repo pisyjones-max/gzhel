@@ -24,7 +24,7 @@ export default function LeadForm() {
     <form onSubmit={onSubmit} className="grid gap-6">
       <label className="grid gap-1"><span className="text-white/80">Что нужно</span>
         <select name="topic" className={field + " [&>option]:text-night"} defaultValue="Опт и заказ посуды">
-          <option>Опт и заказ посуды</option><option>Сувениры и подарки</option><option>Мастер-класс</option><option>Экскурсия по Гжели</option>
+          <option>Опт и заказ посуды</option><option>Сувениры и подарки</option><option>Мастер-класс</option><option>Экскурсия по Гжели</option><option>Добавить мою мастерскую в каталог</option>
         </select>
       </label>
       <label className="grid gap-1"><span className="text-white/80">Имя</span><input name="name" required className={field} placeholder="Как к вам обращаться" /></label>
