@@ -1,9 +1,9 @@
 import type { Config } from "tailwindcss";
 export default {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.ts"],
   theme: {
     extend: {
-      colors: { cobalt: "#1B3FA0", deep: "#0E2A6B", glaze: "#8FA9E6", porcelain: "#F5F8FF" },
+      colors: { night: "#050B1E", navy: "#0A1A4A", cobalt: "#2B55D8", glow: "#8FB0FF", mist: "#DCE6FF", porcelain: "#EEF3FF" },
       fontFamily: { display: ["Cormorant", "Georgia", "serif"], body: ["Golos Text", "system-ui", "sans-serif"] },
     },
   },

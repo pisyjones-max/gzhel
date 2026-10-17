@@ -2,14 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
-body { background: #fff; color: #0E2A6B; font-family: "Golos Text", system-ui, sans-serif; }
-:focus-visible { outline: 3px solid #1B3FA0; outline-offset: 3px; }
+html { scroll-behavior: smooth; background: #050B1E; }
+body {
+  color: #DCE6FF; font-family: "Golos Text", system-ui, sans-serif;
+  background-color: #050B1E;
+  background-image:
+    linear-gradient(rgba(143,176,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,176,255,.045) 1px, transparent 1px),
+    radial-gradient(1200px 600px at 80% -10%, rgba(43,85,216,.28), transparent 60%);
+  background-size: 64px 64px, 64px 64px, 100% 100%;
+}
+:focus-visible { outline: 3px solid #8FB0FF; outline-offset: 3px; }
 .border-gz {
-  height: 28px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cg fill='%231B3FA0'%3E%3Cpath d='M28 3c5 4 5 10 0 14-5-4-5-10 0-14z'/%3E%3Cpath d='M12 14c5-1 9 2 10 7-5 1-9-2-10-7zM44 14c-5-1-9 2-10 7 5 1 9-2 10-7z'/%3E%3Ccircle cx='28' cy='23' r='2'/%3E%3Ccircle cx='3' cy='14' r='1.6'/%3E%3Ccircle cx='53' cy='14' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  height: 28px; opacity: .55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cg fill='%238FB0FF'%3E%3Cpath d='M28 3c5 4 5 10 0 14-5-4-5-10 0-14z'/%3E%3Cpath d='M12 14c5-1 9 2 10 7-5 1-9-2-10-7zM44 14c-5-1-9 2-10 7 5 1 9-2 10-7z'/%3E%3Ccircle cx='28' cy='23' r='2'/%3E%3Ccircle cx='3' cy='14' r='1.6'/%3E%3Ccircle cx='53' cy='14' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x; background-position: center;
 }
-@keyframes sway { 0%,100% { transform: rotate(-1.2deg); } 50% { transform: rotate(1.2deg); } }
-.hair { transform-origin: 70% 0%; animation: sway 9s ease-in-out infinite; }
-@media (prefers-reduced-motion: reduce) { .hair { animation: none; } html { scroll-behavior: auto; } }
+.glow-text { text-shadow: 0 0 32px rgba(143,176,255,.35); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.hero-in { animation: rise 1s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .hero-in { animation: none; } html { scroll-behavior: auto; } }
