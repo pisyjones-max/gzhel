@@ -44,6 +44,7 @@ export default function Page({ params, searchParams }: { params: { id: string };
       {shop && (
       <section className="mx-auto max-w-6xl px-6 pb-12">
           <CouponBox shopId={shop.id} stopId={s.id} lang={lang} labels={{ title: `${t("couponTitle")}: ${shop.name[lang]}`, text: t("couponText"), get: t("getCoupon"), code: t("yourCode"), until: t("validUntil"), discount: t("discount"), error: t("error") }} />
+        {shop.demo && <p className="mt-3 text-sm text-mist/60">{t("demoNote")}</p>}
       </section>
       )}
 

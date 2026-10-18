@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const nav = [
-  ["История", "/istoriya"], ["Мастерские", "/masterskie"], ["Гид", "/guide"],
-  ["Маршруты", "/marshrut-na-den"], ["Где поесть и поспать", "/gde-poest-i-pospat"], ["Купить", "/kupit"], ["Опт", "/opt"],
+  ["Места", "/mesta"], ["Спланировать поездку", "/planirovat"], ["Маршруты", "/marshrut-na-den"],
+  ["Афиша", "/afisha"], ["Купоны", "/kupony"], ["Статьи", "/stati"], ["Мой план", "/plan"],
 ] as const;
 
 export default function Header() {

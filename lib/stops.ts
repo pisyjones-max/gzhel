@@ -19,6 +19,7 @@ export const ui: Record<string, L> = {
   eat: { ru: "Где поесть", en: "Where to eat", zh: "吃饭" },
   stay: { ru: "Где остановиться", en: "Where to stay", zh: "住宿" },
   buy: { ru: "Где купить гжель", en: "Where to buy Gzhel", zh: "购买格热利陶瓷" },
+  demoNote: { ru: "Демо: условия согласуются с магазином", en: "Demo: terms to be confirmed with the shop", zh: "演示：条件待与商店确认" },
   allStops: { ru: "Все остановки", en: "All stops", zh: "所有站点" },
 };
 

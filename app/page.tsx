@@ -1,5 +1,14 @@
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import { items, catName } from "@/lib/catalog";
+import { articles } from "@/lib/articles";
+
+const tools = [
+  { h: "Каталог мест", p: "Мастерские, храмы, музеи, где поесть и остановиться. Поиск и фильтры.", href: "/mesta" },
+  { h: "Спланировать поездку", p: "Выберите интересы и время, получите готовый маршрут.", href: "/planirovat" },
+  { h: "Купоны", p: "Скидки для туристов в магазинах-партнёрах.", href: "/kupony" },
+  { h: "Афиша", p: "Мастер-классы, выставки и ярмарки.", href: "/afisha" },
+];
 
 const world = [
   { c: "Делфт, Нидерланды", t: "Синяя керамика стала сувениром всей страны. Вокруг фабрик построены маршруты, музеи и мастер-классы." },
@@ -39,6 +48,31 @@ export default function Home() {
 
       <div className="border-gz" aria-hidden />
 
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="max-w-3xl font-display text-5xl font-bold leading-tight text-white md:text-6xl">Всё для поездки в одном месте</h2>
+        <ul className="mt-12 grid gap-px bg-glow/20 md:grid-cols-2">
+          {tools.map((t) => (
+            <li key={t.h} className="bg-night"><Link href={t.href} className="block p-8 hover:bg-navy/60">
+              <h3 className="font-display text-3xl font-bold text-white">{t.h}</h3><p className="mt-2 text-lg text-mist/85">{t.p}</p>
+            </Link></li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-24">
+        <div className="flex items-end justify-between gap-6"><h2 className="font-display text-5xl font-bold text-white">Что посмотреть</h2><Link href="/mesta" className="text-glow underline underline-offset-4 hover:text-white">Весь каталог</Link></div>
+        <ul className="mt-10 divide-y divide-glow/20 border-y border-glow/20">
+          {items.slice(0, 6).map((i) => (
+            <li key={i.id}><Link href={`/mesta/${i.id}`} className="grid gap-2 py-6 hover:bg-navy/50 md:grid-cols-[1.1fr_1.4fr] md:gap-10">
+              <div><h3 className="font-display text-3xl font-bold text-white">{i.name}</h3><p className="text-glow">{catName[i.cat]}, {i.town}</p></div>
+              <p className="max-w-lg text-lg text-mist/85">{i.short}</p>
+            </Link></li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="border-gz" aria-hidden />
+
       <section className="mx-auto max-w-6xl px-6 py-24">
         <h2 className="max-w-3xl font-display text-5xl font-bold leading-tight text-white md:text-6xl">Как мир превращает керамику в туристический бренд</h2>
         <ul className="mt-12 divide-y divide-glow/20 border-y border-glow/20">
@@ -67,6 +101,17 @@ export default function Home() {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-24">
+        <h2 className="font-display text-5xl font-bold text-white">Читать о гжели</h2>
+        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+          {articles.map((a) => (
+            <li key={a.slug} className="border-t-2 border-cobalt pt-4"><Link href={`/stati/${a.slug}`} className="block hover:text-glow">
+              <h3 className="font-display text-2xl font-bold text-white">{a.title}</h3><p className="mt-2 text-mist/85">{a.lead}</p>
+            </Link></li>
+          ))}
+        </ul>
       </section>
 
       <section className="bg-navy/70 py-20" id="zayavka">
