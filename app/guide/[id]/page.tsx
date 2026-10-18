@@ -17,7 +17,7 @@ export default function Page({ params, searchParams }: { params: { id: string };
   const s = getStop(params.id);
   if (!s) notFound();
   const lang = asLang(searchParams.lang);
-  const shop = getShop(s.shopId)!;
+  const shop = s.shopId ? getShop(s.shopId) : undefined;
   const q = encodeURIComponent(s.query);
   const yMap = (t: string) => `https://yandex.ru/maps/?text=${encodeURIComponent(t)}`;
   const link = "text-glow underline underline-offset-4 hover:text-white";
@@ -41,9 +41,11 @@ export default function Page({ params, searchParams }: { params: { id: string };
         </p>
       </section>
 
+      {shop && (
       <section className="mx-auto max-w-6xl px-6 pb-12">
-        <CouponBox shopId={shop.id} stopId={s.id} lang={lang} labels={{ title: `${t("couponTitle")}: ${shop.name[lang]}`, text: t("couponText"), get: t("getCoupon"), code: t("yourCode"), until: t("validUntil"), discount: t("discount"), error: t("error") }} />
+          <CouponBox shopId={shop.id} stopId={s.id} lang={lang} labels={{ title: `${t("couponTitle")}: ${shop.name[lang]}`, text: t("couponText"), get: t("getCoupon"), code: t("yourCode"), until: t("validUntil"), discount: t("discount"), error: t("error") }} />
       </section>
+      )}
 
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <div className="divide-y divide-glow/20 border-y border-glow/20">

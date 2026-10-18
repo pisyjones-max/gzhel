@@ -23,7 +23,7 @@ export const ui: Record<string, L> = {
 };
 
 export type Stop = {
-  id: string; shopId: string; query: string;
+  id: string; shopId?: string; query: string;
   name: L; tagline: L; sections: { h: L; p: L }[];
 };
 
@@ -75,6 +75,49 @@ export const stops: Stop[] = [
           ru: "Перед обжигом кобальтовая краска почти чёрная и становится синей только в печи. У ручной работы мазки чуть отличаются, а у художника часто стоит подпись или клеймо мастерской. Печатный рисунок выглядит ровным и плоским.",
           en: "Before firing, the cobalt paint looks almost black and only turns blue in the kiln. Hand-painted pieces have slightly varied strokes and often carry the artist’s signature or a workshop mark. Printed designs look even and flat.",
           zh: "烧制前，钴料看起来接近黑色，入窑烧制后才变成蓝色。手绘作品的笔触会略有不同，常有画师签名或作坊印记；印刷图案则显得平整、呆板。",
+        },
+      },
+    ],
+  },
+  {
+    id: "kolomna", query: "Коломенский кремль",
+    name: { ru: "Коломна: кремль, пастила и мёд", en: "Kolomna: kremlin, pastila and honey", zh: "科洛姆纳：克里姆林、果泥糖与蜂蜜" },
+    tagline: {
+      ru: "Старый город на слиянии рек, куда часто едут после Гжели.",
+      en: "An old town at the meeting of rivers, a popular next stop after Gzhel.",
+      zh: "位于河流交汇处的古城，游客常在参观格热利之后前往。",
+    },
+    sections: [
+      {
+        h: { ru: "Город на трёх реках", en: "A town on three rivers", zh: "三条河交汇的城市" },
+        p: {
+          ru: "Коломна стоит у слияния трёх больших рек. Все дороги ведут к средневековой крепости на высоком берегу Москвы-реки: Коломенский кремль называют одним из чудес России. На стрелке Оки и Москвы-реки стоит Старо-Голутвин монастырь.",
+          en: "Kolomna sits where three large rivers meet. All roads lead to the medieval fortress on the high bank of the Moskva River: the Kolomna Kremlin is counted among the wonders of Russia. The Old Golutvin Monastery stands where the Oka meets the Moskva.",
+          zh: "科洛姆纳坐落在三条大河的交汇处。所有道路都通向莫斯科河高岸上的中世纪城堡：科洛姆纳克里姆林被誉为俄罗斯奇迹之一。奥卡河与莫斯科河交汇的岬角上矗立着旧戈卢特温修道院。",
+        },
+      },
+      {
+        h: { ru: "Пастила", en: "Pastila", zh: "果泥糖" },
+        p: {
+          ru: "Пастила здесь главный символ города, ей посвящены два музея: «Коломенская пастила» и «Музейная фабрика пастилы купца Чуприкова». На фабрике бывают театрализованные экскурсии с дегустацией и чаем.",
+          en: "Pastila, a traditional fruit confection, is the city’s main symbol, and two museums are devoted to it: Kolomna Pastila and the Chuprikov Pastila Museum Factory. The factory offers theatrical tours with tasting and tea.",
+          zh: "果泥糖（пастила）是这座城市的主要象征，这里有两座相关博物馆：“科洛姆纳果泥糖”和“丘普里科夫商人果泥糖博物馆工厂”。工厂有带品尝和茶歇的情景式导览。",
+        },
+      },
+      {
+        h: { ru: "Мёд и пасеки", en: "Honey and apiaries", zh: "蜂蜜与养蜂场" },
+        p: {
+          ru: "Издревле Коломна славилась мёдом и пасеками, были здесь и фруктовые сады, и царская пасека. Отсюда и пошла коломенская пастила.",
+          en: "Kolomna has long been known for honey and apiaries, with orchards and a tsar’s apiary nearby. That is where Kolomna pastila comes from.",
+          zh: "科洛姆纳自古以蜂蜜和养蜂业闻名，这里曾有果园和沙皇的养蜂场。科洛姆纳果泥糖正是由此而来。",
+        },
+      },
+      {
+        h: { ru: "Практика", en: "Practical tips", zh: "实用提示" },
+        p: {
+          ru: "От платформы Коломна до кремля дойти можно примерно за полчаса, до музеев пастилы и «Патефонки» около 15 минут. Обувь берите удобную, гулять придётся много. У окошек «Калачной» часто стоит очередь.",
+          en: "From Kolomna station to the kremlin is about a 30-minute walk, and to the pastila museums and the Patefonka museum about 15. Wear comfortable shoes, there is a lot of walking. There is often a queue at the Kalachnaya windows.",
+          zh: "从科洛姆纳车站步行到克里姆林约30分钟，到果泥糖博物馆和“留声机”博物馆约15分钟。请穿舒适的鞋，需要走不少路。“卡拉奇纳亚”面包窗口前常有人排队。",
         },
       },
     ],

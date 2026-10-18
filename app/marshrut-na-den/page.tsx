@@ -41,6 +41,9 @@ export default function Page() {
           ))}
         </ol>
       </section>
+      <section className="mx-auto max-w-6xl px-6 pb-20">
+        <p className="text-lg">Хотите больше? <Link href="/marshrut-gzhel-kolomna" className="text-glow underline underline-offset-4 hover:text-white">Маршрут Гжель и Коломна на целый день</Link></p>
+      </section>
       <section id="zayavka" className="bg-navy/70 py-20">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2">
           <h2 className="font-display text-4xl font-bold leading-tight text-white md:text-5xl">Хотите такой маршрут под вашу группу? Оставьте заявку</h2>
