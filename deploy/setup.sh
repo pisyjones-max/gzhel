@@ -12,6 +12,7 @@ command -v pm2 >/dev/null || npm i -g pm2
 mkdir -p /var/www
 if [ -d "$DIR/.git" ]; then git -C "$DIR" pull --ff-only; else git clone "$REPO" "$DIR"; fi
 cd "$DIR"
+bash deploy/env.sh
 npm ci --no-audit --no-fund
 nice -n 10 npm run build
 
